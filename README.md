@@ -2,43 +2,96 @@
 
 ## Business Understanding
 
-Jaya Jaya Maju merupakan salah satu perusahaan multinasional yang telah berdiri sejak tahun 2000. Perusahaan ini memiliki lebih dari 1000 karyawan yang tersebar di seluruh penjuru negeri. Walaupun telah menjadi perusahaan yang cukup besar, Jaya Jaya Maju masih menghadapi kesulitan dalam mengelola karyawan. Hal ini berimbas pada tingginya *attrition rate* (rasio jumlah karyawan yang keluar dengan total karyawan keseluruhan) hingga mencapai lebih dari 10%. 
-
-Tingginya tingkat pergantian karyawan (attrition) ini dapat menimbulkan biaya operasional yang besar untuk rekrutmen dan pelatihan karyawan baru, hilangnya pengetahuan institusional, serta mengganggu produktivitas tim.
+Jaya Jaya Maju merupakan salah satu perusahaan multinasional yang telah berdiri sejak tahun 2000. Perusahaan ini memiliki lebih dari 1000 karyawan yang tersebar di seluruh penjuru negeri. Walaupun telah menjadi perusahaan yang cukup besar, Jaya Jaya Maju masih menghadapi kesulitan dalam mengelola karyawan. Hal ini berimbas pada tingginya *attrition rate* (rasio jumlah karyawan yang keluar dengan total karyawan keseluruhan) hingga mencapai lebih dari 10%.
 
 ### Permasalahan Bisnis
 
-1. **Mengidentifikasi Faktor Penyebab Attrition**: Mengetahui faktor-faktor utama (seperti lembur, gaji, tingkat kepuasan, status pernikahan, dll.) yang mendorong karyawan untuk keluar dari Jaya Jaya Maju.
-2. **Prediksi Risiko Attrition Karyawan**: Membangun model prediktif machine learning untuk mengidentifikasi karyawan yang memiliki risiko tinggi untuk keluar dari perusahaan, sehingga tim HR dapat melakukan intervensi preventif.
-3. **Memonitor Metrik Karyawan**: Membuat business dashboard interaktif untuk memantau metrik-metrik HR secara berkala.
+Tingginya tingkat pergantian karyawan (*attrition rate* > 10%) ini merupakan permasalahan utama yang sedang dihadapi oleh manajemen perusahaan Jaya Jaya Maju. Masalah ini membawa beberapa konsekuensi bisnis yang serius bagi jalannya operasional perusahaan, di antaranya:
+1. **Tingginya Beban Biaya Finansial**: Perusahaan harus mengeluarkan biaya yang signifikan untuk proses penarikan, rekrutmen, onboarding, serta pelatihan ulang (*retraining*) karyawan baru guna menggantikan karyawan yang keluar.
+2. **Hilangnya Pengetahuan Institusional (*Institutional Knowledge*)**: Ketika karyawan berpengalaman keluar dari perusahaan, keahlian khusus, metode kerja efektif, dan pemahaman mendalam tentang ekosistem operasional yang mereka miliki ikut hilang, sehingga menurunkan efisiensi kerja tim.
+3. **Penurunan Produktivitas & Risiko Burnout**: Kekosongan posisi menyebabkan beban kerja dialihkan sementara ke karyawan yang tersisa. Jika berlangsung lama, hal ini memicu kelelahan kerja (*burnout*) bagi karyawan lain, menurunkan moral tim, dan berujung pada penurunan kualitas kinerja perusahaan secara keseluruhan.
 
 ### Cakupan Proyek
 
-1. **Eksplorasi Data (EDA)**: Menganalisis korelasi dan visualisasi hubungan antara berbagai fitur dengan status attrition.
-2. **Preprocessing Data**: Membersihkan data, menangani missing values, encoding variabel kategorikal, scaling fitur numerik, dan mengatasi class imbalance dengan teknik SMOTE.
+Untuk mengatasi permasalahan bisnis tersebut, proyek ini memiliki cakupan teknis sebagai berikut:
+1. **Eksplorasi Data (EDA)**: Melakukan analisis data eksploratif (Univariate, Bivariate, dan Multivariate) untuk menganalisis korelasi dan visualisasi hubungan antara fitur demografi/pekerjaan dengan status attrition.
+2. **Preprocessing Data**: Membersihkan dataset dari missing values, melakukan encoding variabel kategorikal, scaling fitur numerik, serta mengatasi class imbalance dengan teknik SMOTE.
 3. **Pembuatan Model Machine Learning**: Melatih model klasifikasi menggunakan algoritma *Gradient Boosting Classifier* dan mengoptimalkannya dengan penyesuaian threshold keputusan.
-4. **Evaluasi Model**: Menganalisis performa model menggunakan *classification report*, *confusion matrix*, dan kurva *ROC-AUC*.
-5. **Penyusunan Solusi Bisnis & Dashboard**: Menyediakan panduan wireframe, kueri SQL, dan langkah-langkah pembuatan dashboard analitik menggunakan Metabase.
-6. **Deployment Lokal**: Menyediakan script klasifikasi interaktif (`prediction.py`) untuk menguji data karyawan baru.
-
-### Persiapan
-
-* **Sumber data**: Dataset disediakan di folder `data/employee_data.csv` (terdiri atas 1470 data karyawan dan 35 kolom/fitur). Penjelasan setiap kolom dapat dibaca pada [README.md data](file:///c:/Users/User/Documents/TUGAS%20TI/PORTFOLIO/Projects/JayaMaju/data/README.md).
-* **Setup environment**:
-  Pastikan Anda telah memasang seluruh pustaka (dependencies) yang dibutuhkan dengan menjalankan perintah berikut:
-  ```bash
-  pip install -r requirements.txt
-  ```
+4. **Evaluasi Model**: Menganalisis performa model menggunakan *classification report*, *confusion matrix*, kurva *ROC-AUC*, dan analisis *Feature Importance*.
+5. **Dashboard Analitis (Metabase)**: Merancang dan membuat business dashboard interaktif untuk memonitor metrik-metrik HR secara real-time.
+6. **Deployment Lokal**: Menyediakan script klasifikasi interaktif (`prediction.py`) untuk memprediksi potensi attrition karyawan secara langsung melalui input CLI.
 
 ---
 
-## Business Dashboard
+## Persiapan Proyek
 
-Dashboard analitik dibuat menggunakan **Metabase** untuk membantu departemen HR memonitor faktor-faktor yang mempengaruhi *attrition rate*.
+### 1. Sumber Data
+Dataset yang digunakan dalam proyek ini disediakan secara lokal di folder [data/employee_data.csv](file:///c:/Users/User/Documents/TUGAS%20TI/PORTFOLIO/Projects/JayaMaju/data/employee_data.csv). Penjelasan mengenai masing-masing dari 35 kolom/fitur data dapat dibaca secara lengkap pada berkas [README.md data](file:///c:/Users/User/Documents/TUGAS%20TI/PORTFOLIO/Projects/JayaMaju/data/README.md).
 
-### Kredensial Akses Metabase
-* **Email / Username**: `root@mail.com`
-* **Password**: `root123`
+### 2. Membuat dan Mengaktifkan Virtual Environment (venv)
+Sangat direkomendasikan untuk menggunakan Python Virtual Environment agar library yang digunakan tidak bertabrakan dengan environment global komputer Anda.
+
+**Langkah-langkah pembuatan dan aktivasi venv:**
+- **Windows (PowerShell / Command Prompt):**
+  ```powershell
+  # 1. Buat virtual environment bernama 'venv'
+  python -m venv venv
+
+  # 2. Aktifkan venv di PowerShell
+  .\venv\Scripts\Activate.ps1
+  # Atau di Command Prompt (cmd)
+  .\venv\Scripts\activate.bat
+  ```
+- **macOS / Linux:**
+  ```bash
+  # 1. Buat virtual environment bernama 'venv'
+  python3 -m venv venv
+
+  # 2. Aktifkan venv
+  source venv/bin/activate
+  ```
+
+### 3. Instalasi Dependencies
+Setelah virtual environment aktif, pasang seluruh pustaka yang dibutuhkan dengan menjalankan perintah berikut:
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Cara Mengakses dan Menjalankan Dashboard Metabase
+Dashboard interaktif dibuat menggunakan **Metabase** untuk membantu tim HR memantau tren dan faktor pendorong attrition. Gunakan langkah-langkah terstruktur berikut untuk menjalankan dan mengakses dashboard:
+
+* **Persyaratan:** Pastikan Docker Desktop sudah terpasang dan berjalan di komputer Anda.
+* **Versi Metabase yang Digunakan:** `metabase/metabase:v0.46.4` (disarankan menggunakan versi latihan ini agar konfigurasi database ter-import dengan sempurna).
+
+**Langkah-langkah Menjalankan Container:**
+1. **Jalankan Container Metabase baru:**
+   Jalankan container dengan memetakan port 3000 dan beri nama container `metabase`:
+   ```bash
+   docker run -d -p 3000:3000 --name metabase metabase/metabase:v0.46.4
+   ```
+2. **Salin File Database (`metabase.db.mv.db`) ke Dalam Container:**
+   Metabase menyimpan konfigurasi dashboard dan kueri SQL di dalam database H2. Salin file database yang disertakan dalam repositori ini (`metabase.db.mv.db`) ke folder database metabase di dalam container:
+   ```bash
+   # Di terminal / command prompt pada root folder proyek, jalankan:
+   docker cp metabase.db.mv.db metabase:/metabase.db/metabase.db.mv.db
+   ```
+3. **Restart Container Metabase:**
+   Agar Metabase memuat ulang database yang baru disalin, jalankan restart pada container:
+   ```bash
+   docker restart metabase
+   ```
+4. **Akses Dashboard Melalui localhost:**
+   Buka peramban (browser) Anda dan akses alamat **[http://localhost:3000](http://localhost:3000)**.
+5. **Kredensial Akses Metabase:**
+   Masuk ke dashboard menggunakan akun berikut:
+   * **Email / Username**: `root@mail.com`
+   * **Password**: `root123`
+
+### Preview Business Dashboard
+Berikut adalah tangkapan layar dari dashboard analitik yang berhasil di-deploy:
+![HR Attrition Dashboard](puteranami-dashboard.png)
+
+---
 
 ## Machine Learning Model
 
@@ -67,17 +120,23 @@ python prediction.py
 
 ---
 
-## Conclusion
+## Conclusion & Business Implications
 
-Berdasarkan hasil analisis data eksploratif (EDA) dan tingkat kepentingan fitur (*Feature Importance*) dari model Gradient Boosting, berikut beberapa kesimpulan utama mengenai penyebab attrition di Jaya Jaya Maju:
+Proyek ini mengintegrasikan analisis data eksploratif (EDA) dan pemodelan prediktif machine learning untuk memahami dan menekan angka attrition karyawan di Jaya Jaya Maju.
 
-1. **Kompensasi dan Gaji Bulanan (*Monthly Income*)**: Karyawan yang keluar memiliki rata-rata gaji bulanan yang jauh lebih rendah (~$4,787) dibandingkan dengan karyawan yang memilih untuk bertahan (~$6,832). Ini mengindikasikan ketidakpuasan finansial sebagai salah satu faktor pendorong terbesar.
-2. **Beban Kerja Lembur (*OverTime*)**: Karyawan yang bekerja lembur (*OverTime = Yes*) memiliki *attrition rate* yang sangat tinggi (sekitar 30%), berbanding terbalik dengan mereka yang tidak lembur (sekitar 10%). Beban kerja yang berlebihan berdampak signifikan pada retensi.
-3. **Tingkat Opsi Saham (*Stock Option Level*) & Level Jabatan (*Job Level*)**: Karyawan dengan `StockOptionLevel` dan `JobLevel` yang rendah memiliki tingkat kerentanan attrition tertinggi. Ketiadaan kepemilikan aset perusahaan memperkecil rasa loyalitas.
-4. **Masa Kerja Awal (*Years At Company*)**: Attrition paling tinggi terjadi pada rentang **0 hingga 2 tahun pertama** masa kerja. Setelah melewati tahun ke-3, retensi karyawan cenderung lebih stabil.
-5. **Kepuasan Lingkungan Kerja (*Environment & Job Satisfaction*)**: Karyawan yang menilai kepuasan lingkungan dan kepuasan kerjanya di angka **1 (Low)** memiliki attrition rate di atas 25%.
-6. **Frekuensi Perjalanan Bisnis (*Business Travel*)**: Karyawan yang ditugaskan untuk bepergian dinas secara sering (`Travel_Frequently`) menunjukkan tingkat attrition yang lebih tinggi dibandingkan dengan mereka yang jarang atau tidak bepergian.
-7. **Status Pernikahan (*Marital Status*)**: Karyawan berstatus **Single** memiliki tingkat pergantian yang jauh lebih tinggi daripada karyawan yang sudah Married atau Divorced.
+### 1. Ringkasan Performa Model Machine Learning
+Model machine learning berbasis algoritma **Gradient Boosting Classifier** berhasil dibangun dan dioptimalkan. Pada data pengujian (test set), model mencapai **Akurasi 81.00%** dengan skor **ROC-AUC sebesar 0.8045**. Untuk memaksimalkan kemampuan deteksi dini HR, threshold keputusan disesuaikan menjadi **0.30** sehingga menghasilkan **Attrition Recall sebesar 42.00%**. Penggunaan threshold kustom ini sangat penting karena meminimalkan risiko *false negative* (karyawan yang diprediksi bertahan, padahal sebenarnya berisiko tinggi untuk keluar).
+
+### 2. Temuan Insight Utama (Faktor Pendorong Attrition)
+Berdasarkan hasil EDA dan *Feature Importance* model, faktor-faktor utama yang mendorong karyawan keluar adalah:
+* **Kompensasi dan Gaji Bulanan (*Monthly Income*)**: Karyawan yang keluar memiliki rata-rata gaji bulanan yang jauh lebih rendah (~$4,787) dibandingkan dengan karyawan yang bertahan (~$6,832). Ketidakpuasan finansial merupakan salah satu pemicu utama.
+* **Beban Kerja Lembur (*OverTime*)**: Karyawan yang bekerja lembur (*OverTime = Yes*) memiliki *attrition rate* mencapai 30%, jauh lebih tinggi dibandingkan dengan mereka yang tidak lembur (~10%). Beban kerja berlebih berdampak negatif pada retensi.
+* **Opsi Saham (*Stock Option Level*) & Level Jabatan (*Job Level*)**: Karyawan dengan tingkat opsi saham dan level jabatan yang rendah (Job Level 1 & 2) memiliki tingkat kerentanan attrition tertinggi. Ketiadaan kepemilikan aset perusahaan memperkecil rasa loyalitas.
+* **Masa Kerja Awal (*Years At Company*)**: Attrition paling tinggi terjadi pada rentang **0 hingga 2 tahun pertama** masa kerja. Setelah melewati tahun ke-3, retensi karyawan cenderung stabil.
+* **Kepuasan Lingkungan Kerja (*Environment Satisfaction*)**: Karyawan dengan skor kepuasan lingkungan bernilai **1 (Low)** menunjukkan tingkat attrition di atas 25%.
+
+### 3. Implikasi & Rekomendasi Bisnis
+Dengan hasil pemodelan ini, departemen HR kini memiliki **sistem peringatan dini (early warning system)**. HR dapat menyaring database karyawan secara berkala menggunakan model prediktif untuk mengidentifikasi karyawan yang berada di zona risiko tinggi (*high attrition risk*). Langkah ini memungkinkan HR melakukan tindakan pencegahan secara proaktif (intervensi terarah) sebelum karyawan tersebut memutuskan keluar.
 
 ---
 
