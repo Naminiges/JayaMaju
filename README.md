@@ -26,7 +26,7 @@ Untuk mengatasi permasalahan bisnis tersebut, proyek ini memiliki cakupan teknis
 ## Persiapan Proyek
 
 ### 1. Sumber Data
-Dataset yang digunakan dalam proyek ini disediakan secara lokal di folder [data/employee_data.csv](file:///c:/Users/User/Documents/TUGAS%20TI/PORTFOLIO/Projects/JayaMaju/data/employee_data.csv). Penjelasan mengenai masing-masing dari 35 kolom/fitur data dapat dibaca secara lengkap pada berkas [README.md data](file:///c:/Users/User/Documents/TUGAS%20TI/PORTFOLIO/Projects/JayaMaju/data/README.md).
+Dataset yang digunakan dalam proyek ini disediakan secara lokal di folder data/employee_data.csv. Penjelasan mengenai masing-masing dari 35 kolom/fitur data dapat dibaca secara lengkap pada berkas data/README.md.
 
 ### 2. Membuat dan Mengaktifkan Virtual Environment (venv)
 Sangat direkomendasikan untuk menggunakan Python Virtual Environment agar library yang digunakan tidak bertabrakan dengan environment global komputer Anda.
