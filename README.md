@@ -40,59 +40,6 @@ Dashboard analitik dibuat menggunakan **Metabase** untuk membantu departemen HR 
 * **Email / Username**: `root@mail.com`
 * **Password**: `root123`
 
-### Struktur Layout Dashboard (Wireframe)
-```
-┌──────────────────────────────────────────────────────────────────┐
-│           JAYA JAYA MAJU - HR ATTRITION DASHBOARD               │
-│                                                                  │
-├─────────────┬─────────────┬──────────────┬──────────────────────┤
-│   CARD 1    │   CARD 2    │   CARD 3     │      CARD 4          │
-│ Total Emp.  │ Attrition   │ Attrition    │  Avg Monthly         │
-│   1058      │  Count: 179 │  Rate: 16.9% │  Income: $6,503      │
-│  (Number)   │  (Number)   │  (Number)    │  (Number)            │
-├─────────────┴─────────────┴──────────────┴──────────────────────┤
-│                                                                  │
-│  ┌───────────────────────────┐ ┌──────────────────────────────┐ │
-│  │       CARD 5              │ │         CARD 6               │ │
-│  │  Attrition Rate by        │ │  Attrition Rate by           │ │
-│  │  Department                │ │  Job Role                    │ │
-│  │  (Bar Chart - Grouped)    │ │  (Horizontal Bar Chart)      │ │
-│  │                           │ │                              │ │
-│  └───────────────────────────┘ └──────────────────────────────┘ │
-│                                                                  │
-│  ┌───────────────────────────┐ ┌──────────────────────────────┐ │
-│  │       CARD 7              │ │         CARD 8               │ │
-│  │  Attrition by OverTime    │ │  Attrition by Business       │ │
-│  │  (Pie Chart)              │ │  Travel (Bar Chart)          │ │
-│  │                           │ │                              │ │
-│  └───────────────────────────┘ └──────────────────────────────┘ │
-│                                                                  │
-│  ┌───────────────────────────┐ ┌──────────────────────────────┐ │
-│  │       CARD 9              │ │         CARD 10              │ │
-│  │  Attrition by Age Group   │ │  Attrition by Marital        │ │
-│  │  (Bar Chart)              │ │  Status (Bar Chart)          │ │
-│  │                           │ │                              │ │
-│  └───────────────────────────┘ └──────────────────────────────┘ │
-│                                                                  │
-│  ┌───────────────────────────┐ ┌──────────────────────────────┐ │
-│  │       CARD 11             │ │         CARD 12              │ │
-│  │  Avg Income: Attrition    │ │  Attrition by Environment    │ │
-│  │  vs Retained (Bar)        │ │  Satisfaction (Bar Chart)    │ │
-│  │                           │ │                              │ │
-│  └───────────────────────────┘ └──────────────────────────────┘ │
-│                                                                  │
-│  ┌──────────────────────────────────────────────────────────────┐│
-│  │                    CARD 13                                   ││
-│  │  Attrition Count by Years at Company (Line Chart)            ││
-│  │                                                              ││
-│  └──────────────────────────────────────────────────────────────┘│
-└──────────────────────────────────────────────────────────────────┘
-```
-
-Panduan lengkap mengenai pembuatan kueri SQL, konfigurasi setiap visualisasi card, serta langkah ekspor database kontainer Metabase telah didokumentasikan di berkas: **[DASHBOARD_GUIDE.md](file:///c:/Users/User/Documents/TUGAS%20TI/PORTFOLIO/Projects/JayaMaju/DASHBOARD_GUIDE.md)**.
-
----
-
 ## Machine Learning Model
 
 Proyek ini melatih model klasifikasi untuk memprediksi apakah seorang karyawan berpotensi melakukan *attrition* (keluar).
